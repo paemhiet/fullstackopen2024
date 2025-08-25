@@ -10,7 +10,7 @@ sequenceDiagram
 
     Note left of server: The server redirect URL to https://studies.cs.helsinki.fi/exampleapp/notes
 
-    Note right of browser: The browser reloads the page
+    Note right of browser: The browser follows redirect (method becomes GET)
     
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
     activate server
