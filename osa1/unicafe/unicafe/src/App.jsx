@@ -1,11 +1,9 @@
 import { useState } from 'react'
 
-// Single feedback button
 const Button = ({ onClick, text }) => (
   <button onClick={onClick}>{text}</button>
 )
 
-// One statistics row as a table row
 const StatisticLine = ({ text, value }) => (
   <tr>
     <td>{text}</td>
