@@ -1,0 +1,71 @@
+### Hae kaikki henkilöt
+GET http://localhost:3001/api/persons
+
+### Poista henkilö id:llä 2
+DELETE http://localhost:3001/api/persons/2
+
+### Tarkista, että id 2 on poissa
+GET http://localhost:3001/api/persons
+
+### Lisää uusi henkilö
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Åke Backend",
+  "number": "555-12345"
+}
+
+### Tarkista lista
+GET http://localhost:3001/api/persons
+
+### Puuttuva nimi
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "number": "123-456"
+}
+
+### Puuttuva numero
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "NumerotonUkkeli"
+}
+
+### Sama nimi löytyy jo
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Arto Hellas",
+  "number": "999"
+}
+
+### Lisää uusi henkilö onnistuneesti
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Backend Botti",
+  "number": "777-777"
+}
+
+### Hae kaikki henkilöt (GET)
+GET https://puhelinluettelo-backend-withered-hill-5013.fly.dev/api/persons
+
+### Lisää uusi henkilö (POST)
+
+POST https://puhelinluettelo-backend-withered-hill-5013.fly.dev/api/persons
+Content-Type: application/json
+
+{
+  "name": "REST Client Test",
+  "number": "555-123"
+}
+
+### Poista henkilö (DELETE)
+
+DELETE https://puhelinluettelo-backend-withered-hill-5013.fly.dev/api/persons/7
