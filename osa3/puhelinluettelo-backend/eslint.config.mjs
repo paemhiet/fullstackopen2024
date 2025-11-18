@@ -5,7 +5,7 @@ import stylisticJs from '@stylistic/eslint-plugin'
 export default [
   {
     files: ['**/*.js'],
-    ignores: ['dist/**'], // <-- estää buildin virheet
+    ignores: ['dist/**'], 
 
     languageOptions: {
       sourceType: 'commonjs',
