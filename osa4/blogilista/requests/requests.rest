@@ -1,0 +1,111 @@
+### Lisää uusi blogi
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+  "title": "Ensimmäinen blogi",
+  "author": "Testaaja",
+  "url": "http://example.com",
+  "likes": 5
+}
+
+### Hae kaikki blogit
+GET http://localhost:3003/api/blogs
+
+### Poista blogi idn perusteella
+DELETE http://localhost:3003/api/blogs/691cbc79ac2ff2e06a42c431
+
+### Luo uusi käyttäjä
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "hellas",
+  "name": "Arto Hellas",
+  "password": "salainen"
+}
+
+### Hae kaikki käyttäjät
+GET http://localhost:3003/api/users
+
+### Luo uusi käyttäjä
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "potkuri",
+  "name": "Podi Lukija",
+  "password": "sekret"
+}
+
+### Lisää blogi
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+  "title": "Things I Don’t Know as of 2018",
+  "author": "Dan Abramov",
+  "url": "https://overreacted.io/things-i-dont-know-as-of-2018/",
+  "likes": 0
+}
+
+### Luo uusi käyttäjä 
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "mluukkai",
+  "name": "Matti Luukkainen",
+  "password": "salainen"
+}
+
+### Kirjautuminen oikeilla tiedoilla
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+  "username": "mluukkai",
+  "password": "salainen"
+}
+
+### Kirjautuminen väärillä tiedoilla
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+  "username": "mluukkai",
+  "password": "WRONG"
+}
+
+### Kirjaudu sisään ja saa token
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+  "username": "mluukkai",
+  "password": "salainen"
+}
+
+### Lisää blogi TOKENILLA
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1sdXVra2FpIiwiaWQiOiI2OTFlZmY0OWZiYmYzMjg3NDQ2YzgyYmUiLCJpYXQiOjE3NjM2Mzk3NTcsImV4cCI6MTc2MzY0MzM1N30._i2lMriqIyfdaGrCC2je2t65LN7bU1YOMkRuAENOLd0
+
+{
+  "title": "Tokenilla lisätty blogi",
+  "author": "Kirjautunut Käyttäjä",
+  "url": "http://example.com/tokenblogi",
+  "likes": 3
+}
+
+### Yritä lisätä blogi ILMAN tokenia
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+  "title": "Tämä ei saisi onnistua",
+  "author": "Anonymous",
+  "url": "http://example.com/fail"
+}
+
+
